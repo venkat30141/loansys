@@ -1,0 +1,5 @@
+{
+  "name": "Loan Management System",
+  "description": "A comprehensive Loan Management System with role-based dashboards for Admins, Borrowers, Lenders, and Analysts. This application provides a complete interface for managing the entire loan lifecycle, from request and approval to funding and repayment, including data analytics.",
+  "requestFramePermissions": []
+}

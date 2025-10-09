@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Management System</title>
+    <script>
+      // Explicitly configure Tailwind CSS to ensure it works with dynamic content
+      window.tailwind = {
+        config: {
+          darkMode: 'class',
+          safelist: [
+            'bg-yellow-100', 'text-yellow-800', 'dark:bg-yellow-900', 'dark:text-yellow-300',
+            'bg-blue-100', 'text-blue-800', 'dark:bg-blue-900', 'dark:text-blue-300',
+            'bg-green-100', 'text-green-800', 'dark:bg-green-900', 'dark:text-green-300',
+            'bg-teal-100', 'text-teal-800', 'dark:bg-teal-900', 'dark:text-teal-300',
+            'bg-purple-100', 'text-purple-800', 'dark:bg-purple-900', 'dark:text-purple-300',
+            'bg-red-100', 'text-red-800', 'dark:bg-red-900', 'dark:text-red-300',
+          ],
+          theme: {
+            extend: {},
+          },
+          plugins: [],
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@0.12.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

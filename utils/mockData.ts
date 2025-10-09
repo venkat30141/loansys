@@ -1,0 +1,88 @@
+
+import { User, Loan, Role, LoanStatus } from '../types';
+
+export const MOCK_USERS: User[] = [
+  { id: 'user-1', name: 'Admin User', email: 'admin@loansys.com', role: Role.Admin, creditScore: 0, password: 'password' },
+  { id: 'user-2', name: 'Alice Borrower', email: 'alice@example.com', role: Role.Borrower, creditScore: 720, password: 'password' },
+  { id: 'user-3', name: 'Bob Lender', email: 'bob@example.com', role: Role.Lender, creditScore: 0, password: 'password' },
+  { id: 'user-4', name: 'Charlie Analyst', email: 'charlie@loansys.com', role: Role.Analyst, creditScore: 0, password: 'password' },
+  { id: 'user-5', name: 'Diana Borrower', email: 'diana@example.com', role: Role.Borrower, creditScore: 650, password: 'password' },
+  { id: 'user-6', name: 'Eve Lender', email: 'eve@example.com', role: Role.Lender, creditScore: 0, password: 'password' },
+  { id: 'user-7', name: 'Frank Borrower', email: 'frank@example.com', role: Role.Borrower, creditScore: 800, password: 'password' },
+];
+
+export const MOCK_LOANS: Loan[] = [
+  {
+    id: 'loan-1',
+    amount: 5000,
+    borrowerId: 'user-2',
+    status: LoanStatus.Pending,
+    requestDate: '2023-10-01',
+    repaymentSchedule: [],
+    interestRate: 5,
+    term: 12,
+  },
+  {
+    id: 'loan-2',
+    amount: 15000,
+    borrowerId: 'user-5',
+    lenderId: 'user-3',
+    status: LoanStatus.Approved,
+    requestDate: '2023-09-15',
+    repaymentSchedule: [],
+    interestRate: 7,
+    term: 36,
+  },
+  {
+    id: 'loan-3',
+    amount: 2000,
+    borrowerId: 'user-7',
+    lenderId: 'user-6',
+    status: LoanStatus.Repaying,
+    requestDate: '2023-08-20',
+    repaymentSchedule: [
+        {id: 'r-3-1', amount: 175.81, date: '2023-09-20', status: 'Paid'},
+        {id: 'r-3-2', amount: 175.81, date: '2023-10-20', status: 'Due'},
+        {id: 'r-3-3', amount: 175.81, date: '2023-11-20', status: 'Due'},
+    ],
+    interestRate: 10,
+    term: 12,
+  },
+    {
+    id: 'loan-4',
+    amount: 10000,
+    borrowerId: 'user-2',
+    lenderId: 'user-3',
+    status: LoanStatus.Repaying,
+    requestDate: '2023-01-05',
+    repaymentSchedule: [
+        {id: 'r-4-1', amount: 447.73, date: '2023-02-05', status: 'Paid'},
+        {id: 'r-4-2', amount: 447.73, date: '2023-03-05', status: 'Paid'},
+        {id: 'r-4-3', amount: 447.73, date: '2023-04-05', status: 'Paid'},
+        {id: 'r-4-4', amount: 447.73, date: '2023-05-05', status: 'Due'},
+    ],
+    interestRate: 7.5,
+    term: 24,
+  },
+  {
+    id: 'loan-5',
+    amount: 7500,
+    borrowerId: 'user-5',
+    status: LoanStatus.Rejected,
+    requestDate: '2023-10-05',
+    repaymentSchedule: [],
+    interestRate: 8,
+    term: 24,
+  },
+  {
+    id: 'loan-6',
+    amount: 25000,
+    borrowerId: 'user-7',
+    lenderId: 'user-6',
+    status: LoanStatus.Paid,
+    requestDate: '2022-01-10',
+    repaymentSchedule: Array(12).fill(0).map((_,i) => ({id:`r-6-${i}`, amount: 2222, date: '2022-02-10', status: 'Paid'})),
+    interestRate: 6.5,
+    term: 12,
+  },
+];
